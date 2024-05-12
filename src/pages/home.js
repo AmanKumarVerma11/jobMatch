@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/header';
-import Form from '../components/form';
 import Footer from '../components/footer';
+import FileUploader from '../components/newUpload';
 
 function Home() {
     return (
         <div>
             <Header />
-            <Form />
+            <FileUploader />
             <Footer />
         </div>
     );

@@ -45,11 +45,11 @@ const Form = () => {
 
     return (
         <div>
-        <div className='container'>
-            <div className='upload-area' >
-            {/* <FileUploader/> */}
+            <div className='container'>
+                <div className='upload-area' >
+                    {/* <FileUploader/> */}
+                </div>
             </div>
-        </div>
             <hr />
             <form className='form-container' onSubmit={handleSubmit}>
                 <label className='form-input-label'>
