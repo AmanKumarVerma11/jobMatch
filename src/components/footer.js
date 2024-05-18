@@ -1,34 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/footer.css';
 
 const Footer = () => {
     return (
         <div className='wrapper'>
-        <footer class="footer" >
+        <footer className="footer" >
             <div className='logo'>
                 <h2>Job<a href="#home">Match</a></h2>
-                <p>Your Pathway to Career Success</p>
-                <div className='desc'>JobMatch empowers individuals to navigate the job market 
-                with confidence by providing a data-driven and personalized career guidance platform.</div>
+                <p>Empowering your career journey with AI-driven insights</p>
+                <div className='feature'>
+                  <div >
+                    <h4>Personalized Job Matching</h4>
+                    <div className='desc'>Discover job roles tailored to your skills and aspirations with our intelligent AI matching.</div>
+                  </div>
+                  <div>
+                    <h4>Skills Gap Analysis</h4>
+                    <div className='desc'>Identify and bridge your knowledge gaps with our comprehensive quiz-based skill assessments.</div>
+                  </div>
+                </div>
             </div>
-            <div class="row">
-                <h5 class="row-title">Useful Links</h5>
-                <ul class="row-links">
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="#about">About</a>
-                  </li>
-                  <li>
-                    <a href="#contact">Contact</a>
-                  </li>
+            <div className="row">
+                <h5 className="row-title">Useful Links</h5>
+                <ul className="row-links">
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </div>
         </footer>
-        <hr />
+        <div className='hr'> </div>
         <div className='footer-bottom'>
-            <p>© 2023 JobMatch. All rights reserved.</p>
+            <p>© 2024 Connect. All rights reserved.</p>
         </div>
         </div>
     );

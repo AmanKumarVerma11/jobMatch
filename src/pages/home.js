@@ -5,7 +5,7 @@ import FileUploader from '../components/newUpload';
 
 function Home() {
     return (
-        <div>
+        <div className='main'>
             <Header />
             <FileUploader />
             <Footer />
