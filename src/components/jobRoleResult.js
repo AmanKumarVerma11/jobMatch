@@ -98,7 +98,8 @@ const JobRoleResult = () => {
                                             </td>
                                             <td>
                                                 {/* Replace the link below with the actual assessment link for the specific job role */}
-                                                <a href="https://mcqmate.com/topic/machine-learning/quiz" target="_blank" rel="noopener noreferrer">Take Assessment</a>
+                                                {/* <a href="https://mcqmate.com/topic/machine-learning/quiz" target="_blank" rel="noopener noreferrer">Take Assessment</a> */}
+                                                <Link to={`/assessment/${encodeURIComponent(role)}`}>Take your Assessment</Link>
                                             </td>
                                         </tr>
                                     ))}

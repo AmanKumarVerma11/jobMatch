@@ -12,12 +12,12 @@ import MlAssessment from './components/mlAssessment';
 function App() {
   return (
     <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/contact" element={<Contact />} />
-    <Route path="/job-role-result" element={<JobRoleResult />} />
-    <Route path="/job-openings/:role" element={<JobOpenings />} />
-    <Route path="/ml-assessment" element={<MlAssessment />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/job-role-result" element={<JobRoleResult />} />
+      <Route path="/job-openings/:role" element={<JobOpenings />} />
+      <Route path="/assessment/:role" element={<MlAssessment />} />
     </Routes>
   );
 }

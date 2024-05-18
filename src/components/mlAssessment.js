@@ -1,108 +1,55 @@
+// MlAssessment.js
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import Quiz from 'react-quiz-component';
 import Header from '../components/header';
 import Footer from '../components/footer';
-
+import LoadingAnimation from '../components/loadingAnimation';
 
 const MlAssessment = () => {
-    const quiz = {
-        "quizTitle": "Web Developer Quiz",
-        "quizSynopsis": "Test your knowledge and skills as a web developer with this quiz. Covering topics from HTML, CSS, JavaScript to modern web development frameworks.",
-        "nrOfQuestions": "5",
-        "questions": [
-          {
-            "question": "Which HTML tag is used to define an internal style sheet?",
-            "questionType": "text",
-            "answerSelectionType": "single",
-            "answers": [
-              "<style>",
-              "<script>",
-              "<css>",
-              "<link>"
-            ],
-            "correctAnswer": "1",
-            "messageForCorrectAnswer": "Correct answer. Good job.",
-            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-            "explanation": "The <style> tag is used to define internal CSS.",
-            "point": "10"
+  const { role } = useParams();
+  const [quiz, setQuiz] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log('useEffect called with role:', role);
+    const fetchQuiz = async () => {
+      try {
+        console.log('Fetching quiz data...');
+        setIsLoading(true); // Set loading state to true before fetching data
+        const response = await axios.get('http://127.0.0.1:5000/quiz', {
+          data: {
+            job_role: role,
           },
-          {
-            "question": "What does CSS stand for?",
-            "questionType": "text",
-            "answerSelectionType": "single",
-            "answers": [
-              "Creative Style Sheets",
-              "Cascading Style Sheets",
-              "Computer Style Sheets",
-              "Colorful Style Sheets"
-            ],
-            "correctAnswer": "2",
-            "messageForCorrectAnswer": "Correct answer. Good job.",
-            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-            "explanation": "CSS stands for Cascading Style Sheets.",
-            "point": "10"
-          },
-          {
-            "question": "Which of the following is correct about JavaScript?",
-            "questionType": "text",
-            "answerSelectionType": "single",
-            "answers": [
-              "JavaScript is an assembly language of the web.",
-              "JavaScript is compiled.",
-              "JavaScript is a programming language for the web.",
-              "JavaScript is the same as Java."
-            ],
-            "correctAnswer": "3",
-            "messageForCorrectAnswer": "Correct answer. Good job.",
-            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-            "explanation": "JavaScript is a programming language primarily used for web development.",
-            "point": "10"
-          },
-          {
-            "question": "Which company developed React.js?",
-            "questionType": "text",
-            "answerSelectionType": "single",
-            "answers": [
-              "Google",
-              "Microsoft",
-              "Facebook",
-              "Twitter"
-            ],
-            "correctAnswer": "3",
-            "messageForCorrectAnswer": "Correct answer. Good job.",
-            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-            "explanation": "React.js was developed by Facebook.",
-            "point": "10"
-          },
-          {
-            "question": "Which of the following is a key feature of Flexbox?",
-            "questionType": "text",
-            "answerSelectionType": "multiple",
-            "answers": [
-              "Direction of the layout",
-              "Alignment along the cross axis",
-              "Equal spacing among elements",
-              "Ability to use media queries"
-            ],
-            "correctAnswer": [1, 2, 3],
-            "messageForCorrectAnswer": "Correct answer. Good job.",
-            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
-            "explanation": "Flexbox allows control over the direction, alignment, and spacing of elements within a container.",
-            "point": "20"
-          }
-        ]
-      };
-      
-    
-    return (
-        <div className="main">
-            <Header />
-            <div className="ml-assessment">
-                <h2>Machine Learning Assessment</h2>
-                <Quiz quiz={quiz} shuffle={true} showInstantFeedback={false} continueTillCorrect={false} />
-            </div>
-            <Footer />
-        </div>
-    );
-}
+        });
+        console.log('Response:', response);
+        setQuiz(response.data);
+      } catch (error) {
+        console.error('Error fetching quiz:', error);
+      }
+      setIsLoading(false); // Set loading state to false after fetching data
+    };
+
+    fetchQuiz();
+  }, [role]);
+
+  return (
+    <div className="main">
+      <Header />
+      <div className="ml-assessment flex flex-col items-center justify-center">
+        <h2 className='text-2xl'>Take your Assessment</h2>
+        {isLoading ? (
+          <LoadingAnimation />
+        ) : quiz && quiz.questions ? (
+          <Quiz quiz={quiz} shuffle={true} showInstantFeedback={false} continueTillCorrect={false} />
+        ) : (
+          <p>No quiz data available.</p>
+        )}
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
 export default MlAssessment;
