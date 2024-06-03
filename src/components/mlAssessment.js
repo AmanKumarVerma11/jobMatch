@@ -19,13 +19,12 @@ import laptop from '../assets/laptop.png';
 
 const MlAssessment = () => {
   const { role } = useParams();
-  // const navigate = useNavigate();
   const [quiz, setQuiz] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(1);
 
   useEffect(() => {
     const fetchQuiz = async () => {
