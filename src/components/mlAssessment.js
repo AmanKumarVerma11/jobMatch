@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Quiz from 'react-quiz-component';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import LoadingAnimation from '../components/loadingAnimation';
