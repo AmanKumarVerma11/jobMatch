@@ -1,68 +1,15 @@
-// // JobRoleResult.js
-// import React from 'react';
-// import { useLocation, Link } from 'react-router-dom';
-// import Header from '../components/header';
-// import Footer from '../components/footer';
-// import '../styles/jobRoleResult.css';
-
-// const JobRoleResult = () => {
-//     const location = useLocation();
-//     const jobRoleData = location.state?.jobRoleData;
-
-//     return (
-//         <div className="main">
-//             <Header />
-//             <div className="job-role-result">
-//                 <h2>Job Role Result</h2>
-//                 {jobRoleData ? (
-//                     <div>
-//                         <div className="user-info">
-//                             <h3>Candidate Name</h3>
-//                             <p>{jobRoleData.user}</p>
-//                         </div>
-//                         <div className="job-role">
-//                             <h3>Ideal Job Role</h3>
-//                             <table>
-//                                 <thead>
-//                                     <tr>
-//                                         <th>Job Role</th>
-//                                         <th>Job Openings</th>
-//                                     </tr>
-//                                 </thead>
-//                                 <tbody>
-//                                     {jobRoleData.ideal_job_role.map((role, index) => (
-//                                         <tr key={index}>
-//                                             <td>{role}</td>
-//                                             <td>
-//                                                 <Link to={`/job-openings/${encodeURIComponent(role)}`}>View Job Openings</Link>
-//                                             </td>
-//                                         </tr>
-//                                     ))}
-//                                 </tbody>
-//                             </table>
-//                         </div>
-//                         <div className="advice">
-//                             <h3>Advice</h3>
-//                             <p>{jobRoleData.advice}</p>
-//                         </div>
-//                     </div>
-//                 ) : (
-//                     <p>No job role data available.</p>
-//                 )}
-//             </div>
-//             <Footer />
-//         </div>
-//     );
-// };
-
-// export default JobRoleResult;
-
-// JobRoleResult.js
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import StepProgressBar from './stepProgressBar';
 import '../styles/jobRoleResult.css';
+import bcomet from '../assets/big-comet.svg';
+import cometEmo from '../assets/comet-emoji.svg';
+import comet from '../assets/comet.svg';
+import ellipse from '../assets/ellipse.svg';
+import orbit from '../assets/orbit.svg';
+import scomet from '../assets/small-comet.svg';
 
 const JobRoleResult = () => {
     const location = useLocation();
@@ -71,16 +18,44 @@ const JobRoleResult = () => {
     return (
         <div className="main">
             <Header />
+            <div className='ellipse'>
+                <img src={ellipse} alt="ellipse" />
+            </div>
+            <StepProgressBar currentStep={2} />
+            <div className='bcomet'>
+                <img src={bcomet} alt="comet" />
+            </div>
+
+            <div className='cometEmo'>
+                <img src={cometEmo} alt="comet" />
+            </div>
+
+            <div className='comet'>
+                <img src={comet} alt="comet" />
+            </div>
+
+            <div className='comet1'>
+                <img src={comet} alt="comet" />
+            </div>
+
+            <div className='orbit'>
+                <img src={orbit} alt="orbit" />
+            </div>
+
+            <div className='scomet'>
+                <img src={scomet} alt="comet" />
+            </div>
+
             <div className="job-role-result">
                 <h2>Job Role Result</h2>
                 {jobRoleData ? (
                     <div>
                         <div className="user-info">
-                            <h3>Candidate Name</h3>
-                            <p>{jobRoleData.user}</p>
+                            <h3 className='subHeading'>Candidate Name :</h3>
+                            <p className='text-xl'>{jobRoleData.user}</p>
                         </div>
                         <div className="job-role">
-                            <h3>Ideal Job Role</h3>
+                            <h3 className='subHeading' >Ideal Job Role :</h3>
                             <table>
                                 <thead>
                                     <tr>
@@ -92,14 +67,14 @@ const JobRoleResult = () => {
                                 <tbody>
                                     {jobRoleData.ideal_job_role.map((role, index) => (
                                         <tr key={index}>
-                                            <td>{role}</td>
+                                            <td className='roles'>{role}</td>
                                             <td>
-                                                <Link to={`/job-openings/${encodeURIComponent(role)}`}>View Job Openings</Link>
+                                                <Link className="jobLink" to={`/job-openings/${encodeURIComponent(role)}`}>View Job Openings</Link>
                                             </td>
                                             <td>
                                                 {/* Replace the link below with the actual assessment link for the specific job role */}
                                                 {/* <a href="https://mcqmate.com/topic/machine-learning/quiz" target="_blank" rel="noopener noreferrer">Take Assessment</a> */}
-                                                <Link to={`/assessment/${encodeURIComponent(role)}`}>Take your Assessment</Link>
+                                                <Link className="assessmentLink" to={`/assessment/${encodeURIComponent(role)}`}>Check your skill level</Link>
                                             </td>
                                         </tr>
                                     ))}
@@ -107,7 +82,7 @@ const JobRoleResult = () => {
                             </table>
                         </div>
                         <div className="advice">
-                            <h3>Advice</h3>
+                            <h3 className='subHeading' >Advice :</h3>
                             <p>{jobRoleData.advice}</p>
                         </div>
                     </div>

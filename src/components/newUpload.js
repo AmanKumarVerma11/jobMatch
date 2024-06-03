@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/newUpload.css";
+import StepProgressBar from './stepProgressBar';
 
 const FileUploader = () => {
     const [file, setFile] = useState(null);
@@ -15,7 +16,7 @@ const FileUploader = () => {
     };
 
     const handleFileUpload = () => {
-        setLoading(true); // Set loading to true when upload starts
+        setLoading(true); 
 
         const formData = new FormData();
         formData.append('file', file);
@@ -32,14 +33,15 @@ const FileUploader = () => {
                 console.error('Error:', error);
             })
             .finally(() => {
-                setLoading(false); // Set loading to false when upload completes (regardless of success or failure)
+                setLoading(false); 
             });
     };
 
     return (
         <div className="container">
             <h1>Welecome, to Job<span className='match' >Match</span></h1>
-            <p className="sub">Upload your resume to get started</p>
+            <p className="sub">Upload your resume here to get started</p>
+            <StepProgressBar currentStep={1} />
             <div className="file-uploader">
             <div className="file-uploader__area">
                 <label htmlFor="file-input" className="file-uploader__label">

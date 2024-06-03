@@ -8,6 +8,7 @@ import Contact from './pages/contact';
 import JobRoleResult from './components/jobRoleResult';
 import JobOpenings from './components/jobOpenings';
 import MlAssessment from './components/mlAssessment';
+import Assessment from './components/assessment';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/job-role-result" element={<JobRoleResult />} />
       <Route path="/job-openings/:role" element={<JobOpenings />} />
       <Route path="/assessment/:role" element={<MlAssessment />} />
+      <Route path="/assess" element={<Assessment />} />
     </Routes>
   );
 }

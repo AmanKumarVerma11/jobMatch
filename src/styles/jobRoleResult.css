@@ -1,3 +1,67 @@
+.main {
+    position: relative;
+}
+
+.ellipse {
+    z-index: -10;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+}
+
+.bcomet {
+    position: absolute;
+    z-index: -5;
+    width: 20%;
+    height: 20%;
+    bottom: 310px;
+    right: 270px;  
+}
+
+.cometEmo {
+    position: absolute;
+    z-index: -4;
+    width: 45px;
+    height: 45px;
+    bottom: 390px;
+    left: 90px;
+    /* rotate: 300deg; */
+}
+
+.comet {
+    position: absolute;
+    z-index: -5;
+    width: 20%;
+    height: 20%;
+    bottom: 880px;
+    right: 220px;
+}
+
+.comet1 {
+    position: absolute;
+    z-index: -2;
+    width: 20%;
+    height: 20%;
+    bottom: 630px;
+    left: -20px;
+}
+
+.orbit {
+    position: absolute;
+    z-index: -5;
+    width: 70%;
+    height: 70%;
+}
+
+.scomet {
+    position: absolute;
+    z-index: -5;
+    width: 20%;
+    height: 20%;
+    bottom: 750px;
+    left: 220px;
+}
+
 .job-role-result {
     max-width: 800px;
     margin: 25px auto;
@@ -20,7 +84,12 @@
     margin-bottom: 1.5rem;
 }
 
-.user-info h3 {
+.subHeading {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.user-info .subHeading {
     margin-right: 1rem;
 }
 
@@ -51,4 +120,34 @@ tbody tr:nth-child(even) {
 
 tbody tr td {
     padding: 2px 13px;
+}
+
+.roles {
+    padding: 10px 13px;
+}
+
+.jobLink {
+    color: #000000cf;
+    text-decoration: none;
+    background-color: #72ebfec2;
+    padding: 6px 15px;
+    border-radius: 15px;
+    &:hover {
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+        background-color: #00ddff;
+    }
+}
+
+.assessmentLink {
+    color: #000;
+    text-decoration: none;
+    background-color: #fe7e72af;
+    padding: 6px 15px;
+    border-radius: 15px;
+    &:hover {
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+        background-color: #ff2306c6;
+    }
 }

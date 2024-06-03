@@ -31,7 +31,7 @@ const Footer = () => {
         </footer>
         <div className='hr'> </div>
         <div className='footer-bottom'>
-            <p>© 2024 Connect. All rights reserved.</p>
+            <p>© 2024 JobMatch. All rights reserved.</p>
         </div>
         </div>
     );
