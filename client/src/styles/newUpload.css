@@ -1,0 +1,126 @@
+.container {
+    height: 100vh;
+    background: linear-gradient(rgba(207, 207, 207, 0.303), rgba(0, 158, 238, 0.5));
+    color : #000;
+}
+
+.main h1 {
+    text-align: center;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
+    font-size: 3rem;
+}
+
+.main .sub {
+    text-align: center;
+    justify-content: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.match {
+    color :#007bff
+}
+
+.file-uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding-top: 15px;
+}
+
+.file-uploader__area {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #fffafa65;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.495);
+    &:hover {
+        background-position: 0 -100%;
+        background-color:#ffffff91;
+        transition: all 1s;
+    }
+}
+
+.file-uploader__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-uploader__icon {
+    width: 80px;
+    height: 80px;
+    fill: #888;
+    transition: fill 0.3s ease;
+}
+
+.file-uploader__area:hover .file-uploader__icon {
+    fill: #111111;
+    transition: fill 0.3s ease;
+}
+
+.file-uploader__input-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-uploader__file-name {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.file-uploader__button {
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #43db40eb;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-uploader__button:hover {
+    background-color: #238af8;
+}
+
+.file-uploader__button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

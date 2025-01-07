@@ -1,0 +1,45 @@
+{
+  "short_name": "JobMatch",
+  "name": "JobMatch :  Intelligent Job Role Recommendation System ",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "168x168"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
