@@ -24,14 +24,19 @@ const Contact = () => {
         e.preventDefault();
         console.log('Form submitted:', formData);
 
-        emailjs.sendForm('service_2244k7k', 'template_cc6tijq', e.target, 'qEsmDkbJBqh78LvvW')
-            .then((result) => {
-                console.log('Email successfully sent!', result.text);
-                // Handle success (e.g., show a success message)
-            }, (error) => {
-                console.error('Error sending email:', error.text);
-                // Handle error (e.g., show an error message)
-            });
+        emailjs.sendForm(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            e.target,
+            process.env.REACT_APP_EMAILJS_USER_ID
+        )
+        .then((result) => {
+            console.log('Email successfully sent!', result.text);
+            // Handle success (e.g., show a success message)
+        }, (error) => {
+            console.error('Error sending email:', error.text);
+            // Handle error (e.g., show an error message)
+        });
     };
 
     return (

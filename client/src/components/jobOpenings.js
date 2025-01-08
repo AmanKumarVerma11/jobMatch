@@ -32,7 +32,7 @@ const JobOpenings = () => {
                         index: '0'
                     },
                     headers: {
-                        'X-RapidAPI-Key': 'fa147c1a64mshf586cb7dc1294ddp15c160jsnde9a19aa343f',
+                        'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
                         'X-RapidAPI-Host': 'jobs-api14.p.rapidapi.com'
                     }
                 };
@@ -82,33 +82,3 @@ const JobOpenings = () => {
 };
 
 export default JobOpenings;
-//     return (
-//         <div className="main">
-//             <Header />
-//             <div className="job-openings">
-//                 <h2>Job Openings for {role}</h2>
-//                 {isLoading ? (
-//     <p>Loading...</p>
-// ) : jobOpenings.jobs && jobOpenings.jobs.length > 0 ? (
-//     <ul>
-//         {jobOpenings.jobs.map((job) => (
-//             <li key={job.id}>
-//                 <a href={job.url} target="_blank" rel="noopener noreferrer">
-//                     {job.company} - {job.title}
-//                 </a>
-//                 <p>{job.description}</p>
-//                 {/* Add any other relevant job details */}
-//             </li>
-//         ))}
-//     </ul>
-// ) : (
-//     <p>No job openings found.</p>
-// )}
-//             </div>
-//             <Footer />
-
-//         </div>
-//     );
-// };
-
-// export default JobOpenings;
